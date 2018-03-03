@@ -1,5 +1,8 @@
 package controllers;
 
+import io.ebean.Ebean;
+import models.Users;
+import play.libs.Json;
 import play.mvc.*;
 
 /**
@@ -15,7 +18,7 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok();
+        return ok(Json.toJson(Ebean.find(Users.class).findList()));
     }
 
 }
