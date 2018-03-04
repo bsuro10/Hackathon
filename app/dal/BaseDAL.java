@@ -15,7 +15,11 @@ public class BaseDAL<T> {
         return (Ebean.find(type).findList());
     }
 
-    public T getById(T id) {
+    public T getById(String id) {
+        return (Ebean.find(type, id));
+    }
+
+    public T getById(int id) {
         return (Ebean.find(type, id));
     }
 
