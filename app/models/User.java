@@ -40,7 +40,7 @@ public class User extends Model {
     @JoinColumn(name="role_id")
     private Role role;
 
-    @Column(name="imageUrl")
+    @Column(name="imgUrl")
     private String imageUrl;
 
     @ManyToOne
