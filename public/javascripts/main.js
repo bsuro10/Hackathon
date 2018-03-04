@@ -1,21 +1,19 @@
 var myAppModule = angular.module('myApp', ["ngRoute"]);
 
-myAppModule.controller("mainController", function($scope) {
-    $scope.test = "ran";
-});
-
 myAppModule.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/Profile', {
-        templateUrl: '../views/Routes/Profile.html',
+        templateUrl: 'Routes/Profile.html',
         controller: 'profileController'
       }).
       when('/Map', {
-        templateUrl: '../views/Routes/Map.html',
+        templateUrl: 'Routes/Map.html',
         controller: 'mapController'
       }).
       otherwise({
         redirectTo: '/Profile'
       });
   }]);
+
+
