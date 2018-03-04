@@ -39,6 +39,7 @@ create table t_users (
   req_hours                     integer not null,
   curr_hours                    integer not null,
   role_id                       integer,
+  imageurl                      varchar(255),
   org_id                        integer,
   constraint pk_t_users primary key (username)
 );
