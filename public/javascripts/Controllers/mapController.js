@@ -1,14 +1,21 @@
-myAppModule.controller("mapController", function($scope) {
+myAppModule.controller("mapController", function ($scope) {
 
-    $scope.load = function() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
+    var map;
+    
+    $scope.getAllAssociations = function()
+    
+    $scope.load = function () {
+        map = new google.maps.Map(document.getElementById('map'), {zoom : 1, center: new google.maps.LatLng(2.8,-187.3)});
+        $scope.initAssociations();
+    };
+
+    $scope.initAssociations = function () {
+        for (var i = 0; i < allAssociations.length; i++) {
+            var coords = allAssociations[i];
+            var marker = new google.maps.Marker({
+                position:  new google.maps.LatLng(coords.x, coords.y),
+                map: map
+            });
+        }
     }
 });
