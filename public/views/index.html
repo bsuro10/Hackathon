@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="myApp" dir="rtl">
     <head>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
         <title>60 שעות</title>
         <link href="../../css/Resources/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/Resources/bootstrap.rtl.min.css" rel="stylesheet">
@@ -17,12 +19,13 @@
             <a class="py-2 d-none d-md-inline-block" href="#Profile">הפרופיל שלי</a>
             <a class="py-2 d-none d-md-inline-block" href="#Map">מפת ההתנדבויות</a>
             <a class="py-2 d-none d-md-inline-block" href="#Organizations">רשימת ההתנדבויות</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">הגדרות</a>
-            <a class="py-2 d-none d-md-inline-block" href="#">יצירת קשר</a>
+            <a class="py-2 d-none d-md-inline-block" href="#Settings">הגדרות</a>
+            <a class="py-2 d-none d-md-inline-block" href="#Contact">יצירת קשר</a>
         </div>
     </nav>
 
     <div ng-view></div>
+
         <script src="../../js/Resources/bootstrap.min.js" type="text/javascript"></script>
         <script src="../../js/Resources/angular.min.js" type="text/javascript"></script>
         <script src="../../js/Resources/angular-route.js" type="text/javascript"></script>
@@ -32,5 +35,9 @@
         <script src="../../js/Controllers/mainController.js" type="text/javascript"></script>
         <script src="../../js/Controllers/profileController.js" type="text/javascript"></script>
         <script src="../../js/Controllers/OrgController.js" type="text/javascript"></script>
+        <script src="../../js/Controllers/SettingsController.js" type="text/javascript"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEBRu1w9GYgy8qTFLBcSj1CxTcqBCWwE0">
+    </script>
     </body>
 </html>
