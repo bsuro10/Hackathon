@@ -79,3 +79,37 @@
 }
 
 .overflow-hidden { overflow: hidden; }
+
+body {
+    background-color: #006A55;
+    background: linear-gradient(#24927C, #00382D) no-repeat fixed;
+}
+.title {
+    font-size: 50px;
+    color: #FAFAFA;
+    text-shadow: 2px 4px #00382D;
+}
+
+.form {
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: right;
+}
+
+.form label {
+    color: white;
+    font-size: 20px;
+}
+
+.form-control {
+    border-radius: 0px;
+    border-bottom: 3px solid #00382D;
+    height: 50px;
+}
+
+.btn {
+    margin-top: 20px;
+    height: 50px;
+    width: 400px;
+}
