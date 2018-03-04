@@ -1,0 +1,23 @@
+<div>
+   <br>
+   <br>
+   <br>
+    <h1 dir="rtl" class="orgTitle text-right">ההתנדבויות שלך</h1>
+    <br>
+    <table class="orgTable table" dir="rtl">
+        <thead>
+            <tr>
+                <th scope="col">שם עמותה</th>
+                <th scope="col">כתובת</th>
+                <th scope="col">שעות</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="org in events" class="text-right">
+                <td>{{org.event.org.name}}</td>
+                <td>{{org.event.org.address}}</td>
+                <td>{{org.hours}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

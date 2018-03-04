@@ -12,6 +12,10 @@ myAppModule.config(['$routeProvider',
         templateUrl: 'Routes/Map.html',
         controller: 'mapController'
       }).
+     when('/Organizations', {
+        templateUrl: 'Routes/organizations.html',
+        controller: 'OrgController'
+      }).
       otherwise({
         redirectTo: '/Profile'
       });

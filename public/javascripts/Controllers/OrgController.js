@@ -1,7 +1,7 @@
 myAppModule.controller("OrgController", function($scope, $http) {
     
-    $scope.orgReq = $http.get("user/org").then(function(data) {
-        $scope.organizations = data;
+    $scope.orgReq = $http.get("/events/current").then(function(data) {
+        $scope.events = data.data;
     });
     
     

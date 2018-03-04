@@ -12,7 +12,9 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 # User Methods
 GET     /users/current              controllers.UserController.getUserByUsername()
 GET     /users/:username            controllers.UserController.userLogin(username:String)
+GET     /events/current             controllers.UserController.events()
 
 # An example controller showing a sample home page
 GET     /                           controllers.Assets.at(path="/public/views", file="login.html")
+GET     /organizations              controllers.Assets.at(path="/public/views", file="organizations.html")
 GET     /views/*file                controllers.Assets.at(path="/public/views", file)
