@@ -40,6 +40,9 @@ public class User extends Model {
     @JoinColumn(name="role_id")
     private Role role;
 
+    @Column(name="imageUrl")
+    private String imageUrl;
+
     @ManyToOne
     @JoinColumn(name="org_id")
     private Organization organization;
@@ -54,7 +57,8 @@ public class User extends Model {
                 int curr_hours,
                 Role role,
                 String cellphone,
-                Organization org) {
+                Organization org,
+                String imageUrl) {
         this.setUsername(username);
         this.setPassword(password);
         this.setCity(city);
@@ -66,6 +70,7 @@ public class User extends Model {
         this.setRole(role);
         this.setCellphone(cellphone);
         this.setOrganization(org);
+        this.setImageUrl(imageUrl);
     }
 
     public String getUsername() {
@@ -154,5 +159,13 @@ public class User extends Model {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

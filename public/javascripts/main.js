@@ -8,8 +8,8 @@ myAppModule.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/Profile', {
-        templateUrl: '../views/Routes/Profile.html'
-        //controller: 'AddOrderController'
+        templateUrl: '../views/Routes/Profile.html',
+        controller: 'profileController'
       }).
       when('/Map', {
         templateUrl: '../views/Routes/Map.html',
