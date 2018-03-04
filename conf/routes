@@ -10,5 +10,5 @@ GET     /css/*file                  controllers.Assets.at(path="/public/styleshe
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # An example controller showing a sample home page
-GET     /                           controllers.Assets.at(path="/public/views", file="index.html")
+GET     /                           controllers.Assets.at(path="/public/views", file="login.html")
 GET     /views/*file                controllers.Assets.at(path="/public/views", file)
