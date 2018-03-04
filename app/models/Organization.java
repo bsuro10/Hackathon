@@ -26,7 +26,7 @@ public class Organization extends Model {
     @Column(name="image")
     private String image_url;
 
-    @OneToMany(targetEntity=User.class, mappedBy="username")
+    @OneToMany(targetEntity=User.class, mappedBy="organization")
     private List<User> managers = new ArrayList<User>();
 
     public Organization(int id, String name, String address, String desc, String image_url, List<User> lstManagers) {
