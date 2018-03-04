@@ -12,8 +12,8 @@ myAppModule.config(['$routeProvider',
         //controller: 'AddOrderController'
       }).
       when('/Map', {
-        templateUrl: 'views/Routes/Map.html'
-        //controller: 'ShowOrdersController'
+        templateUrl: 'views/Routes/Map.html',
+        controller: 'mapController'
       }).
       otherwise({
         redirectTo: '/Profile'
