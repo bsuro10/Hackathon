@@ -6,10 +6,8 @@ myAppModule.controller("mainController", function($scope, dataService) {
         $scope.user = data;
         $scope.dataLoaded = true;
     });
-    
+
     $scope.$on('getUser', function(event) {
-        // TODO: Get the user from the dataservice
-        // TODO: Send it via broadcast
         $scope.$broadcast('userInfo', $scope.user);
     })
 });

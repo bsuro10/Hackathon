@@ -10,8 +10,8 @@ GET     /css/*file                  controllers.Assets.at(path="/public/styleshe
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # User Methods
-GET     /users/:username            controllers.HomeController
-GET     /users/current
+GET     /users/current              controllers.UserController.getUserByUsername()
+GET     /users/:username            controllers.UserController.userLogin(username:String)
 
 # An example controller showing a sample home page
 GET     /                           controllers.Assets.at(path="/public/views", file="login.html")
