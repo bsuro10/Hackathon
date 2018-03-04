@@ -1,8 +1,5 @@
 package controllers;
 
-import io.ebean.Ebean;
-import models.Users;
-import play.libs.Json;
 import play.mvc.*;
 
 /**

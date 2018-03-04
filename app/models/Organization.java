@@ -3,6 +3,8 @@ package models;
 import io.ebean.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="t_organizations")
@@ -24,17 +26,16 @@ public class Organization extends Model {
     @Column(name="image")
     private String image_url;
 
-    @OneToMany(targetEntity = Users.class, mappedBy = "username")
-    @JoinColumn(name="manager_id")
-    private Users manager;
+    @OneToMany(targetEntity=User.class, mappedBy="username")
+    private List<User> managers = new ArrayList<User>();
 
-    public Organization(int id, String name, String address, String desc, String image_url, Users manager) {
+    public Organization(int id, String name, String address, String desc, String image_url, List<User> lstManagers) {
         this.setId(id);
         this.setName(name);
         this.setAddress(address);
         this.setDesc(desc);
         this.setImage_url(image_url);
-        this.setManager(manager);
+        this.setManagers(lstManagers);
     }
 
     public int getId() {
@@ -77,11 +78,11 @@ public class Organization extends Model {
         this.image_url = image_url;
     }
 
-    public Users getManager() {
-        return manager;
+    public List<User> getManagers() {
+        return managers;
     }
 
-    public void setManager(Users manager) {
-        this.manager = manager;
+    public void setManagers(List<User> managers) {
+        this.managers = managers;
     }
 }
