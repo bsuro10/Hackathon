@@ -17,3 +17,6 @@ GET     /users/:username            controllers.UserController.userLogin(usernam
 # An example controller showing a sample home page
 GET     /                           controllers.Assets.at(path="/public/views", file="login.html")
 GET     /views/*file                controllers.Assets.at(path="/public/views", file)
+
+# Map Data
+GET     /organizations              controllers.OrganizationController.getAllOrganiztions()
