@@ -13,6 +13,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 # User Methods
 GET     /users/current              controllers.UserController.getUserByUsername()
 GET     /users/:username            controllers.UserController.userLogin(username:String)
+GET     /users/school/class         controllers.UserController.getUsersBySchoolAndClass()
 
 # An example controller showing a sample home page
 GET     /                           controllers.Assets.at(path="/public/views", file="login.html")

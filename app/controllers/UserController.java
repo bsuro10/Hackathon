@@ -18,4 +18,9 @@ public class UserController extends Controller {
         session().put("username", username);
         return ok();
     }
+
+    public Result getUsersBySchoolAndClass() {
+        User currUser = userDAL.getById(session().get("username"));
+        return ok(Json.toJson(userDAL.getAllUsersBySchoolAndClass(currUser.getSchool(), currUser.getSch_class())));
+    }
 }
