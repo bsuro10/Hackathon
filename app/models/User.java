@@ -43,6 +43,9 @@ public class User extends Model {
     @JoinColumn(name="role_id")
     private Role role;
 
+    @Column(name="imgUrl")
+    private String imageUrl;
+
     @ManyToOne
     @JoinColumn(name="org_id")
     private Organization organization;
@@ -59,6 +62,7 @@ public class User extends Model {
                 String cellphone,
                 Organization org,
                 String fullname) {
+      
         this.setUsername(username);
         this.setPassword(password);
         this.setCity(city);
