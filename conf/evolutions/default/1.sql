@@ -18,7 +18,6 @@ create table t_organizations (
   name                          varchar(255),
   address                       varchar(255),
   description                   varchar(255),
-  image                         varchar(255),
   constraint pk_t_organizations primary key (id)
 );
 

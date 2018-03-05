@@ -23,18 +23,14 @@ public class Organization extends Model {
     @Column(name="description")
     private String desc;
 
-    @Column(name="image")
-    private String image_url;
-
     @OneToMany(targetEntity=User.class, mappedBy="organization")
     private List<User> managers = new ArrayList<User>();
 
-    public Organization(int id, String name, String address, String desc, String image_url, List<User> lstManagers) {
+    public Organization(int id, String name, String address, String desc, List<User> lstManagers) {
         this.setId(id);
         this.setName(name);
         this.setAddress(address);
         this.setDesc(desc);
-        this.setImage_url(image_url);
         this.setManagers(lstManagers);
     }
 
@@ -68,14 +64,6 @@ public class Organization extends Model {
 
     public void setDesc(String desc) {
         this.desc = desc;
-    }
-
-    public String getImage_url() {
-        return image_url;
-    }
-
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
     }
 
     public List<User> getManagers() {

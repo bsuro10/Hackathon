@@ -19,4 +19,5 @@ GET     /                           controllers.Assets.at(path="/public/views", 
 GET     /views/*file                controllers.Assets.at(path="/public/views", file)
 
 # Map Data
-GET     /organizations              controllers.OrganizationController.getAllOrganiztions()
+GET     /organizations/all          controllers.OrganizationController.getAllOrganiztions()
+GET     /events/all                 controllers.EventController.getAll()
