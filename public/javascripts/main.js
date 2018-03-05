@@ -12,6 +12,17 @@ myAppModule.config(['$routeProvider',
         templateUrl: 'Routes/Map.html',
         controller: 'mapController'
       }).
+      when('/List', {
+          templateUrl: '../views/Routes/Map.html'
+          //controller: 'mapController'
+      }).
+      when('/Settings', {
+        templateUrl: '../views/Routes/Settings.html',
+        controller: 'settingsController'
+      }).
+      when('/Contact', {
+          templateUrl: '../views/Routes/Contact.html'
+      }).
       otherwise({
         redirectTo: '/Profile'
       });
