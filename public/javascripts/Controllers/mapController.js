@@ -1,21 +1,54 @@
-myAppModule.controller("mapController", function ($scope) {
+myAppModule.controller("mapController", function ($scope, dataService) {
 
     var map;
-    
-    $scope.getAllAssociations = function()
-    
+    var allOrganiztions;
+    var geocoder;
+
+    // loads google map
     $scope.load = function () {
-        map = new google.maps.Map(document.getElementById('map'), {zoom : 1, center: new google.maps.LatLng(2.8,-187.3)});
-        $scope.initAssociations();
+        geocoder = new google.maps.Geocoder();
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 3,
+            center: new google.maps.LatLng(2.8, -187.3)
+        });
+
+        // initializes map with organization's locations
+        initAssociations();
     };
 
-    $scope.initAssociations = function () {
-        for (var i = 0; i < allAssociations.length; i++) {
-            var coords = allAssociations[i];
-            var marker = new google.maps.Marker({
-                position:  new google.maps.LatLng(coords.x, coords.y),
-                map: map
-            });
-        }
+    var initAssociations = function () {
+
+        // gets from server all organizations
+        dataService.getMethod('/organizations').then(function (data) {
+            allOrganiztions = data
+            for (var i = 0; i < allOrganiztions.length; i++) {
+                var coords = getLocFromAdress(allOrganiztions[i].address);
+
+                if (coords != null) {
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(coords[0], coords[1]),
+                        map: map
+                    });
+                }
+
+            }
+        });
+
+
+    }
+
+    var getLocFromAdress = function (address) {
+
+        geocoder.geocode({
+            'address': address
+        }, function (result, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                return ([result[0].geometry.location.lat(), result[0].geometry.location.lng()])
+            } else {
+                return null
+            }
+        })
+
     }
 });

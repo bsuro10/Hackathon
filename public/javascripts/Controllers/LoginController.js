@@ -1,7 +1,7 @@
-var LoginModule = angular.module('LoginModule', []);
-
-LoginModule.controller("LoginController", function($scope) {
+LoginModule.controller("LoginController", function($scope, dataService) {
     $scope.submit = function() {
-        window.location = "views/index.html";
+        dataService.getMethod('users/' + $scope.username).then(function() {
+            window.location = "views/index.html";
+        });
     };
 });
