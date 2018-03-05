@@ -1,9 +1,7 @@
 package controllers;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import dal.UserDAL;
 import dal.UserEventsDAL;
-import io.ebean.Ebean;
 import models.User;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -22,6 +20,12 @@ public class UserController extends Controller {
         session().put("username", username);
         return ok();
     }
+
+    public Result getUsersBySchoolAndClass() {
+        User currUser = userDAL.getById(session().get("username"));
+        return ok(Json.toJson(userDAL.getAllUsersBySchoolAndClass(currUser.getSchool(), currUser.getSch_class())));
+    }
+
     public Result events() {
         return ok(Json.toJson(eventsDAL.getByUsername(session().get("username"))));
     }
