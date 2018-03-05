@@ -14,9 +14,13 @@ public class Role extends Model{
     @Column(name="name")
     private String name;
 
-    public Role(int id, String name) {
+    @Column(name="display_name")
+    private String displayName;
+
+    public Role(int id, String name, String displayName) {
         this.setId(id);
         this.setName(name);
+        this.setDisplayName(displayName);
     }
 
     public int getId() {
@@ -33,5 +37,13 @@ public class Role extends Model{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 }

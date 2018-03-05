@@ -25,12 +25,14 @@ create table t_organizations (
 create table t_roles (
   id                            integer auto_increment not null,
   name                          varchar(255),
+  display_name                  varchar(255),
   constraint pk_t_roles primary key (id)
 );
 
 create table t_users (
   username                      varchar(255) not null,
   password                      varchar(255),
+  fullname                      varchar(255),
   cellphone                     varchar(255),
   city                          varchar(255),
   address                       varchar(255),
@@ -39,7 +41,6 @@ create table t_users (
   req_hours                     integer not null,
   curr_hours                    integer not null,
   role_id                       integer,
-  imgurl                        varchar(255),
   org_id                        integer,
   constraint pk_t_users primary key (username)
 );

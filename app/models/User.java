@@ -15,6 +15,9 @@ public class User extends Model {
     @Column(name="password")
     private String password;
 
+    @Column(name="fullname")
+    private String fullname;
+
     @Column(name="cellphone")
     private String cellphone;
 
@@ -40,9 +43,6 @@ public class User extends Model {
     @JoinColumn(name="role_id")
     private Role role;
 
-    @Column(name="imgUrl")
-    private String imageUrl;
-
     @ManyToOne
     @JoinColumn(name="org_id")
     private Organization organization;
@@ -58,7 +58,7 @@ public class User extends Model {
                 Role role,
                 String cellphone,
                 Organization org,
-                String imageUrl) {
+                String fullname) {
         this.setUsername(username);
         this.setPassword(password);
         this.setCity(city);
@@ -70,7 +70,7 @@ public class User extends Model {
         this.setRole(role);
         this.setCellphone(cellphone);
         this.setOrganization(org);
-        this.setImageUrl(imageUrl);
+        this.setFullname(fullname);
     }
 
     public String getUsername() {
@@ -161,11 +161,11 @@ public class User extends Model {
         this.organization = organization;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 }
