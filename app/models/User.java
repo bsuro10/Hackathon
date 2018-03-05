@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.ebean.Model;
 import models.Role;
 import javax.persistence.*;
@@ -153,6 +154,7 @@ public class User extends Model {
         this.cellphone = cellphone;
     }
 
+    @JsonBackReference
     public Organization getOrganization() {
         return organization;
     }
