@@ -1,4 +1,4 @@
-myAppModule.controller("mapController", function ($scope, dataService, $q) {
+myAppModule.controller("mapController", function ($scope, dataService, $q, $compile) {
     var map;
     $scope.user;
     $scope.dataLoaded = false;
@@ -81,11 +81,14 @@ myAppModule.controller("mapController", function ($scope, dataService, $q) {
                         icon: EventIcon
                     });
 
+                    var htmlElement = "<div class='container'><div class='header'><h1> " + element.name +
+                                       " </h1></div><p class='lead'> From " + new Date(element.start_date).toLocaleDateString("he-IL") + " To " + new Date(element.end_date).toLocaleDateString("he-IL") +
+                                       " </p><p> " + element.address +
+                                       " </p><button class='btn btn-warning' ng-click='myFunction()'>התנדב לאירוע זה!</button></div>";
+                    var compiled = $compile(htmlElement)($scope)
+
                     var infoEventWindow = new google.maps.InfoWindow({
-                        content: "<div class='container'><div class='header'><h1> " + element.name +
-                                 " </h1></div><p class='lead'> From " + new Date(element.start_date).toLocaleDateString("he-IL") + " To " + new Date(element.end_date).toLocaleDateString("he-IL") + 
-                                 " </p><p> " + element.address + 
-                                 " </p><button class='btn btn-warning'>התנדב לאירוע זה!</button></div>"
+                        content: compiled[0]
                     });
                     eventMarker.addListener('click', function() {
                         infoEventWindow.open(map, eventMarker);
@@ -113,7 +116,9 @@ myAppModule.controller("mapController", function ($scope, dataService, $q) {
         return deffered.promise;
     }
 
+    $scope.myFunction = function(element) {
+        alert("הוסף בהצלחה!");
+    }
+
     $scope.$emit('getUser');
 });
-
-
