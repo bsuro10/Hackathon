@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import io.ebean.Model;
 import models.Role;
 import javax.persistence.*;
@@ -43,6 +44,9 @@ public class User extends Model {
     @JoinColumn(name="role_id")
     private Role role;
 
+    @Column(name="imgUrl")
+    private String imageUrl;
+
     @ManyToOne
     @JoinColumn(name="org_id")
     private Organization organization;
@@ -59,6 +63,7 @@ public class User extends Model {
                 String cellphone,
                 Organization org,
                 String fullname) {
+      
         this.setUsername(username);
         this.setPassword(password);
         this.setCity(city);
@@ -153,6 +158,7 @@ public class User extends Model {
         this.cellphone = cellphone;
     }
 
+    @JsonBackReference
     public Organization getOrganization() {
         return organization;
     }

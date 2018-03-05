@@ -15,10 +15,12 @@ GET     /users/current              controllers.UserController.getUserByUsername
 GET     /users/:username            controllers.UserController.userLogin(username:String)
 GET     /users/school/class         controllers.UserController.getUsersBySchoolAndClass()
 
-# An example controller showing a sample home page
-GET     /                           controllers.Assets.at(path="/public/views", file="login.html")
-GET     /views/*file                controllers.Assets.at(path="/public/views", file)
-
 # Map Data
 GET     /organizations/all          controllers.OrganizationController.getAllOrganiztions()
 GET     /events/all                 controllers.EventController.getAll()
+GET     /events/current             controllers.UserController.events()
+
+# An example controller showing a sample home page
+GET     /                           controllers.Assets.at(path="/public/views", file="login.html")
+GET     /organizations              controllers.Assets.at(path="/public/views", file="organizations.html")
+GET     /views/*file                controllers.Assets.at(path="/public/views", file)

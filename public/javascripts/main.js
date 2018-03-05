@@ -12,9 +12,9 @@ myAppModule.config(['$routeProvider',
         templateUrl: 'Routes/Map.html',
         controller: 'mapController'
       }).
-      when('/List', {
-          templateUrl: '../views/Routes/Map.html'
-          //controller: 'mapController'
+     when('/Organizations', {
+        templateUrl: 'Routes/organizations.html',
+        controller: 'OrgController'
       }).
       when('/Settings', {
         templateUrl: '../views/Routes/Settings.html',
