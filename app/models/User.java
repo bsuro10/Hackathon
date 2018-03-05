@@ -44,9 +44,6 @@ public class User extends Model {
     @JoinColumn(name="role_id")
     private Role role;
 
-    @Column(name="imgUrl")
-    private String imageUrl;
-
     @ManyToOne
     @JoinColumn(name="org_id")
     private Organization organization;

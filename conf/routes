@@ -11,9 +11,10 @@ GET     /images/*file               controllers.Assets.at(path="/public/images",
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # User Methods
-GET     /users/current              controllers.UserController.getUserByUsername()
-GET     /users/:username            controllers.UserController.userLogin(username:String)
-GET     /users/school/class         controllers.UserController.getUsersBySchoolAndClass()
+GET     /users/current                  controllers.UserController.getUserByUsername()
+GET     /users/:username                controllers.UserController.userLogin(username:String)
+GET     /users/school/class             controllers.UserController.getUsersBySchoolAndClass()
+GET     /organizations/events/unapprove controllers.EventController.getUnApproveEventsByOrgEvents()
 
 # Map Data
 GET     /organizations/all          controllers.OrganizationController.getAllOrganiztions()
